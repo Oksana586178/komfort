@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>УК «Комфорт Сервис» — Ставрополь</title>
+<meta name="description" content="ООО «УК «Комфорт Сервис», г. Ставрополь, ул. Тухачевского, 20/6. Контакты, режим работы, аварийная служба, передача показаний счётчиков.">
+<meta name="theme-color" content="#3b2219">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='10' y='10' width='44' height='44' rx='4' transform='rotate(45 32 32)' fill='%23fff' stroke='%233b2219' stroke-width='3'/%3E%3Crect x='20' y='26' width='8' height='18' fill='%23f2a81d'/%3E%3Crect x='29' y='18' width='8' height='26' fill='%23e5481e'/%3E%3Crect x='38' y='24' width='7' height='20' fill='%23f2a81d'/%3E%3C/svg%3E">
+<style>
+:root {
+  --brown: #3b2219;
+  --brown-2: #5a3526;
+  --brown-3: #7a4a35;
+  --orange: #e5481e;
+  --orange-d: #c23a14;
+  --gold: #f2a81d;
+  --red: #d42a2a;
+  --ink: #2a1e19;
+  --muted: #6e5f58;
+  --bg: #ffffff;
+  --bg-alt: #f7f2ee;
+  --line: #e9dfd8;
+  --radius: 14px;
+  --shadow: 0 6px 24px rgba(59, 34, 25, .10);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body { margin: 0; font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: var(--ink); background: var(--bg); }
+a { color: var(--orange-d); }
+img { max-width: 100%; display: block; }
+h1, h2, h3 { line-height: 1.2; margin: 0 0 .5em; }
+p { margin: 0 0 1em; }
+.wrap { max-width: 1160px; margin: 0 auto; padding: 0 16px; }
+.muted { color: var(--muted); }
+.mt { margin-top: 1.4em; }
+
+/* Top bar */
+.topbar { background: var(--red); color: #fff; font-size: 14px; }
+.topbar__in { display: flex; gap: 18px; align-items: center; justify-content: flex-end; flex-wrap: wrap; padding-top: 6px; padding-bottom: 6px; }
+.topbar a { color: #fff; font-weight: 700; text-decoration: none; }
+
+/* Header */
+.header { position: sticky; top: 0; z-index: 20; background: var(--brown); color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.15); }
+.header__in { display: flex; align-items: center; justify-content: space-between; height: 70px; gap: 16px; }
+.logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff; flex-shrink: 0; }
+.logo svg { width: 46px; height: 46px; flex-shrink: 0; }
+.logo__text { font-weight: 900; font-size: 19px; line-height: 1.05; letter-spacing: .02em; text-transform: uppercase; color: var(--gold); }
+.logo__text small { display: block; font-weight: 500; font-size: 11px; letter-spacing: .06em; color: #e8d8cf; margin-bottom: 2px; }
+.nav { display: flex; gap: 18px; align-items: center; }
+.nav a { text-decoration: none; color: #f3e7e0; font-weight: 500; font-size: 15px; white-space: nowrap; }
+.nav a:hover { color: var(--gold); }
+.nav__phone { font-weight: 800 !important; color: var(--gold) !important; }
+.burger { display: none; background: none; border: 0; padding: 8px; cursor: pointer; }
+.burger span { display: block; width: 24px; height: 2px; background: #fff; margin: 5px 0; }
+
+/* Hero */
+.hero { position: relative; color: #fff; padding: 84px 0 72px; background: var(--brown) url("images/rayon-01.jpg") center / cover no-repeat; }
+.hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(42,22,15,.92) 0%, rgba(42,22,15,.75) 45%, rgba(42,22,15,.35) 100%); }
+.hero__in { position: relative; display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: center; }
+.eyebrow { color: var(--gold); font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: .05em; }
+.hero h1 { font-size: clamp(30px, 4.5vw, 50px); text-shadow: 0 2px 12px rgba(0,0,0,.35); }
+.lead { font-size: 18px; color: #f0e4dd; max-width: 560px; }
+.hero__btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+
+.btn { display: inline-block; padding: 13px 22px; border-radius: 10px; font-weight: 700; text-decoration: none; border: 2px solid transparent; transition: .15s; text-align: center; cursor: pointer; font-size: 16px; font-family: inherit; }
+.btn--primary { background: var(--orange); color: #fff; }
+.btn--primary:hover { background: var(--orange-d); }
+.btn--ghost { border-color: var(--orange); color: var(--orange-d); background: #fff; }
+.btn--ghost:hover { background: var(--orange); color: #fff; }
+.btn--light { border-color: rgba(255,255,255,.8); color: #fff; background: transparent; }
+.btn--light:hover { background: #fff; color: var(--brown); }
+.btn--max { background: linear-gradient(90deg, #3b5bff, #8a3dff); color: #fff; margin-top: 8px; }
+.btn--block { display: block; width: 100%; }
+
+.alert-card { background: #fff; color: var(--ink); border-radius: var(--radius); box-shadow: 0 10px 40px rgba(0,0,0,.3); padding: 28px; border-top: 5px solid var(--red); }
+.alert-card__icon { width: 44px; height: 44px; border-radius: 50%; background: var(--red); color: #fff; font-weight: 900; font-size: 24px; display: grid; place-items: center; margin-bottom: 12px; }
+.alert-card p { color: var(--muted); }
+.alert-card__phone { display: block; font-size: 36px; font-weight: 900; color: var(--red); text-decoration: none; }
+.alert-card__phone--sm { font-size: 20px; }
+
+/* Sections */
+.section { padding: 68px 0; }
+.section--alt { background: var(--bg-alt); }
+.section--dark { background: var(--brown); color: #fff; }
+.section__title { font-size: clamp(26px, 3vw, 36px); margin-bottom: 10px; }
+.section__title::after { content: ""; display: block; width: 56px; height: 4px; background: var(--orange); border-radius: 2px; margin-top: 12px; }
+.section__sub { color: var(--muted); max-width: 680px; margin-bottom: 28px; }
+.section--dark .section__sub { color: #e3d2c8; }
+.grid { display: grid; gap: 20px; }
+.grid--3 { grid-template-columns: repeat(3, 1fr); }
+.grid--2 { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+.card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+.card h3 { font-size: 19px; }
+.card p { color: var(--muted); margin: 0; }
+.card__ico { width: 48px; height: 48px; border-radius: 12px; background: #fdeee6; display: grid; place-items: center; font-size: 26px; margin-bottom: 12px; }
+.section--alt .card { border-color: transparent; box-shadow: var(--shadow); }
+
+/* Office */
+.office { display: grid; grid-template-columns: 1.6fr 1fr; gap: 32px; align-items: center; }
+.office__photos { display: grid; grid-template-columns: 1.3fr 1fr; gap: 14px; }
+.office__photos button { padding: 0; border: 0; background: none; cursor: zoom-in; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.office__photos img { width: 100%; height: 340px; object-fit: cover; transition: transform .3s; }
+.office__photos button:hover img { transform: scale(1.04); }
+.steps { list-style: none; padding: 0; margin: 0 0 20px; counter-reset: s; }
+.steps li { position: relative; padding: 0 0 16px 46px; counter-increment: s; }
+.steps li::before { content: counter(s); position: absolute; left: 0; top: -2px; width: 32px; height: 32px; border-radius: 50%; background: var(--orange); color: #fff; font-weight: 800; display: grid; place-items: center; }
+
+/* Gallery */
+.filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
+.filter { border: 2px solid var(--line); background: #fff; color: var(--ink); padding: 8px 16px; border-radius: 30px; font: inherit; font-weight: 600; cursor: pointer; }
+.filter span { color: var(--muted); font-weight: 500; }
+.filter.is-active { background: var(--brown); border-color: var(--brown); color: #fff; }
+.filter.is-active span { color: var(--gold); }
+.gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.gitem { position: relative; margin: 0; padding: 0; border: 0; background: #ddd; border-radius: 12px; overflow: hidden; cursor: zoom-in; aspect-ratio: 3 / 4; }
+.gitem img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s; }
+.gitem:hover img { transform: scale(1.06); }
+.gitem figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 28px 12px 10px; color: #fff; font-size: 14px; font-weight: 600; text-align: left; background: linear-gradient(transparent, rgba(30,15,10,.85)); }
+.gitem.is-hidden { display: none; }
+.gitem__tag { position: absolute; top: 10px; left: 10px; background: var(--gold); color: var(--brown); font-size: 12px; font-weight: 800; padding: 2px 8px; border-radius: 6px; }
+
+/* District strip */
+.strip { display: grid; grid-auto-flow: column; grid-auto-columns: 300px; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; scrollbar-color: var(--orange) transparent; }
+.strip button { padding: 0; border: 0; background: none; border-radius: 12px; overflow: hidden; scroll-snap-align: start; cursor: zoom-in; }
+.strip img { width: 300px; height: 210px; object-fit: cover; transition: transform .3s; }
+.strip button:hover img { transform: scale(1.05); }
+.strip-nav { display: flex; gap: 10px; justify-content: flex-end; margin-top: -8px; margin-bottom: 14px; }
+.strip-nav button { width: 44px; height: 44px; border-radius: 50%; border: 2px solid rgba(255,255,255,.6); background: transparent; color: #fff; font-size: 20px; cursor: pointer; }
+.strip-nav button:hover { background: var(--orange); border-color: var(--orange); }
+
+/* Meters */
+.meters { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: start; }
+.strong-link { font-weight: 800; font-size: 20px; white-space: nowrap; }
+.sms-example { background: #fff; border-left: 4px solid var(--gold); padding: 14px 18px; border-radius: 8px; margin-bottom: 16px; }
+.sms-example code { font-size: 20px; font-weight: 700; }
+.legend { padding-left: 20px; margin: 0 0 16px; }
+.sms-builder { background: #fff; border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
+.sms-builder label { display: block; font-size: 14px; font-weight: 600; color: var(--muted); margin-bottom: 12px; }
+.sms-builder input { display: block; width: 100%; margin-top: 4px; padding: 10px 12px; font: inherit; border: 1px solid var(--line); border-radius: 8px; }
+.sms-builder input:focus { outline: 2px solid var(--orange); border-color: transparent; }
+.row3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.sms-out { display: block; background: var(--bg-alt); padding: 12px; border-radius: 8px; font-weight: 700; margin: 4px 0 14px; word-break: break-word; }
+
+/* Hours */
+.hours { width: 100%; border-collapse: collapse; }
+.hours td { padding: 10px 0; border-bottom: 1px solid var(--line); }
+.hours td:last-child { text-align: right; font-weight: 700; }
+.hours tr.off td { color: var(--red); }
+
+/* About */
+.req { margin: 0; background: #fff; border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
+.req dt { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: .03em; }
+.req dd { margin: 2px 0 14px; font-weight: 600; }
+.req dd:last-child { margin-bottom: 0; }
+.disclose { margin-top: 32px; padding: 24px; border: 2px dashed var(--line); border-radius: var(--radius); background: #fff; }
+
+/* Contacts */
+.contacts { display: grid; grid-template-columns: 1fr 1.3fr; gap: 32px; }
+.ci { padding: 12px 0; border-bottom: 1px solid var(--line); }
+.ci span { display: block; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: .03em; }
+.ci a { font-weight: 700; }
+.ci--second { font-size: 15px; }
+.map { min-height: 380px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); background: var(--bg-alt); }
+.map iframe { width: 100%; height: 100%; min-height: 380px; border: 0; display: block; }
+
+/* Footer */
+.footer { background: #26150f; color: #d9c6bb; padding: 36px 0; font-size: 14px; }
+.footer a { color: #fff; }
+.footer .muted { color: #a48d81; }
+.footer__in { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; }
+.footer .logo svg { width: 38px; height: 38px; }
+
+/* Lightbox */
+.lb { position: fixed; inset: 0; z-index: 100; background: rgba(20,10,6,.94); display: none; align-items: center; justify-content: center; flex-direction: column; padding: 56px 64px 24px; }
+.lb.is-open { display: flex; }
+.lb img { max-width: 100%; max-height: calc(100vh - 140px); object-fit: contain; border-radius: 6px; box-shadow: 0 10px 40px rgba(0,0,0,.5); }
+.lb__cap { color: #fff; margin-top: 14px; text-align: center; font-weight: 600; }
+.lb__cap small { display: block; color: #c9b4a8; font-weight: 400; }
+.lb__btn { position: absolute; background: rgba(255,255,255,.12); border: 0; color: #fff; width: 52px; height: 52px; border-radius: 50%; font-size: 26px; cursor: pointer; display: grid; place-items: center; }
+.lb__btn:hover { background: var(--orange); }
+.lb__close { top: 14px; right: 14px; }
+.lb__prev { left: 10px; top: 50%; transform: translateY(-50%); }
+.lb__next { right: 10px; top: 50%; transform: translateY(-50%); }
+body.lb-open { overflow: hidden; }
+
+/* Floating emergency button (mobile) */
+.fab { display: none; position: fixed; right: 16px; bottom: 16px; z-index: 30; background: var(--red); color: #fff; font-weight: 800; padding: 14px 20px; border-radius: 40px; text-decoration: none; box-shadow: 0 8px 20px rgba(212, 42, 42, .45); }
+
+/* Responsive */
+@media (max-width: 1060px) {
+  .nav { gap: 14px; }
+  .nav a { font-size: 14px; }
+}
+@media (max-width: 980px) {
+  .grid--3 { grid-template-columns: repeat(2, 1fr); }
+  .gallery { grid-template-columns: repeat(3, 1fr); }
+  .hero__in, .meters, .contacts, .grid--2, .office { grid-template-columns: 1fr; }
+  .burger { display: block; }
+  .nav { display: none; position: absolute; top: 70px; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background: var(--brown); box-shadow: var(--shadow); }
+  .nav a { padding: 14px 16px; border-top: 1px solid rgba(255,255,255,.1); font-size: 16px; }
+  .nav-open .nav { display: flex; }
+}
+@media (max-width: 820px) {
+  .topbar__in { justify-content: center; }
+  .fab { display: block; }
+}
+@media (max-width: 560px) {
+  .grid--3 { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .gitem figcaption { font-size: 12px; padding: 22px 8px 8px; }
+  .hero { padding: 48px 0; }
+  .section { padding: 48px 0; }
+  .alert-card__phone { font-size: 30px; }
+  .office__photos { grid-template-columns: 1fr 1fr; }
+  .office__photos img { height: 200px; }
+  .strip { grid-auto-columns: 240px; }
+  .strip img { width: 240px; height: 170px; }
+  .lb { padding: 56px 8px 16px; }
+  .lb__prev, .lb__next { top: auto; bottom: 14px; transform: none; }
+  .lb__cap { margin-bottom: 60px; }
+  .logo__text { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo" viewBox="0 0 64 64">
+    <rect x="10" y="10" width="44" height="44" rx="4" transform="rotate(45 32 32)" fill="#fff"/>
+    <rect x="19" y="27" width="8" height="17" fill="#f2a81d"/>
+    <rect x="28" y="17" width="9" height="27" fill="#e5481e"/>
+    <rect x="38" y="23" width="7" height="21" fill="#f2a81d"/>
+    <g fill="#fff" opacity=".85">
+      <rect x="21" y="30" width="2" height="2"/><rect x="24" y="30" width="2" height="2"/><rect x="21" y="35" width="2" height="2"/><rect x="24" y="35" width="2" height="2"/>
+      <rect x="30" y="21" width="2" height="2"/><rect x="33" y="21" width="2" height="2"/><rect x="30" y="26" width="2" height="2"/><rect x="33" y="26" width="2" height="2"/><rect x="30" y="31" width="2" height="2"/><rect x="33" y="31" width="2" height="2"/>
+      <rect x="40" y="27" width="2" height="2"/><rect x="40" y="32" width="2" height="2"/>
+    </g>
+    <path d="M14 47c10-4 26-4 36 0" stroke="#5a3526" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <path d="M18 51c8-3 20-3 28 0" stroke="#5a3526" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  </symbol>
+</svg>
+
+<div class="topbar">
+  <div class="wrap topbar__in">
+    <span>Аварийная служба <b>круглосуточно</b></span>
+    <a href="tel:+78652490382">49-03-82</a>
+    <a href="tel:+78652998082">8 (8652) 99-80-82</a>
+  </div>
+</div>
+
+<header class="header">
+  <div class="wrap header__in">
+    <a class="logo" href="#top" aria-label="УК «Комфорт Сервис» — на главную">
+      <svg><use href="#logo"/></svg>
+      <span class="logo__text"><small>Управляющая компания</small>Комфорт Сервис</span>
+    </a>
+    <button class="burger" aria-label="Меню" aria-expanded="false" onclick="document.body.classList.toggle('nav-open');this.setAttribute('aria-expanded',document.body.classList.contains('nav-open'))">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" onclick="document.body.classList.remove('nav-open')">
+      <a href="#services">Услуги</a>
+      <a href="#work">Наша работа</a>
+      <a href="#meters">Показания</a>
+      <a href="#hours">Режим работы</a>
+      <a href="#office">Офис</a>
+      <a href="#contacts">Контакты</a>
+      <a class="nav__phone" href="tel:+78652998080">8 (8652) 99-80-80</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap hero__in">
+    <div>
+      <p class="eyebrow">ООО «Управляющая компания «Комфорт Сервис» · Ставрополь</p>
+      <h1>Заботимся о&nbsp;вашем доме с&nbsp;2008&nbsp;года</h1>
+      <p class="lead">Содержание и ремонт многоквартирных домов, уборка подъездов и дворов, благоустройство, круглосуточная аварийная служба.</p>
+      <div class="hero__btns">
+        <a class="btn btn--primary" href="tel:+78652998080">Позвонить: 99-80-80</a>
+        <a class="btn btn--light" href="#meters">Передать показания</a>
+      </div>
+    </div>
+    <aside class="alert-card">
+      <div class="alert-card__icon" aria-hidden="true">!</div>
+      <h2>Авария в доме?</h2>
+      <p>Протечка, отключение света, воды или газа — звоните в аварийную службу. Работает 24/7.</p>
+      <a class="alert-card__phone" href="tel:+78652490382">49-03-82</a>
+      <a class="alert-card__phone alert-card__phone--sm" href="tel:+78652998082">8 (8652) 99-80-82</a>
+    </aside>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <h2 class="section__title">Чем мы занимаемся</h2>
+    <p class="section__sub">Всё, что нужно, чтобы в доме было чисто, тепло и безопасно.</p>
+    <div class="grid grid--3">
+      <article class="card"><div class="card__ico">🏢</div><h3>Содержание домов</h3><p>Обслуживание общего имущества, инженерных сетей, лифтов, кровли и подвалов.</p></article>
+      <article class="card"><div class="card__ico">🧹</div><h3>Уборка и чистота</h3><p>Регулярная уборка подъездов, лестничных площадок, придомовой территории и парковок.</p></article>
+      <article class="card"><div class="card__ico">🌳</div><h3>Благоустройство</h3><p>Озеленение района, уход за дворами и детскими площадками, ремонт подъездов.</p></article>
+      <article class="card"><div class="card__ico">⚡</div><h3>Бесперебойные ресурсы</h3><p>Контроль подачи электроэнергии, воды и газа, быстрое устранение неисправностей.</p></article>
+      <article class="card"><div class="card__ico">🛠️</div><h3>Аварийная служба</h3><p>Круглосуточный выезд на аварии: <a href="tel:+78652490382">49-03-82</a>.</p></article>
+      <article class="card"><div class="card__ico">🧾</div><h3>Абонентский отдел и касса</h3><p>Начисления, расчёты, справки, приём показаний и оплата коммунальных услуг.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="work">
+  <div class="wrap">
+    <h2 class="section__title">Наша работа</h2>
+    <p class="section__sub">Фото наших сотрудников за работой во дворах и подъездах. Нажмите на фото, чтобы открыть его на весь экран.</p>
+    <div class="filters" role="tablist">
+      <button class="filter is-active" data-filter="all">Все <span></span></button>
+      <button class="filter" data-filter="blago">Благоустройство <span></span></button>
+      <button class="filter" data-filter="remont">Ремонт <span></span></button>
+      <button class="filter" data-filter="clean">Чистота <span></span></button>
+    </div>
+    <div class="gallery" id="gallery">
+      <figure class="gitem" data-cat="blago"><img src="images/work-bench-1.jpg" alt="" loading="lazy"><figcaption>Установка лавочек во дворе</figcaption></figure>
+      <figure class="gitem" data-cat="remont"><img src="images/work-canopy.jpg" alt="" loading="lazy"><figcaption>Ремонт козырька подъезда</figcaption></figure>
+      <figure class="gitem" data-cat="blago"><img src="images/work-swing.jpg" alt="" loading="lazy"><figcaption>Качели на детской площадке</figcaption></figure>
+      <figure class="gitem" data-cat="clean"><img src="images/work-disinfect.jpg" alt="" loading="lazy"><figcaption>Дезинфекция подъезда</figcaption></figure>
+      <figure class="gitem" data-cat="remont"><img src="images/work-door-2.jpg" alt="" loading="lazy"><figcaption>Ремонт двери подъезда</figcaption></figure>
+      <figure class="gitem" data-cat="blago"><img src="images/work-trampoline.jpg" alt="" loading="lazy"><figcaption>Установка батута</figcaption></figure>
+      <figure class="gitem" data-cat="remont"><img src="images/work-welding.jpg" alt="" loading="lazy"><figcaption>Сварочные работы на кровле</figcaption></figure>
+      <figure class="gitem" data-cat="blago"><img src="images/work-trees.jpg" alt="" loading="lazy"><figcaption>Посадка деревьев</figcaption></figure>
+      <figure class="gitem" data-cat="remont"><img src="images/work-asphalt.jpg" alt="" loading="lazy"><figcaption>Ямочный ремонт асфальта</figcaption></figure>
+      <figure class="gitem" data-cat="clean"><img src="images/work-sidewalk.jpg" alt="" loading="lazy"><figcaption>Уборка тротуаров</figcaption></figure>
+      <figure class="gitem" data-cat="blago"><img src="images/work-bench-2.jpg" alt="" loading="lazy"><figcaption>Монтаж уличной мебели</figcaption></figure>
+      <figure class="gitem" data-cat="remont"><img src="images/work-facade.jpg" alt="" loading="lazy"><figcaption>Ремонт фасада</figcaption></figure>
+      <figure class="gitem" data-cat="blago"><img src="images/work-playground.jpg" alt="" loading="lazy"><figcaption>Обслуживание детской площадки</figcaption></figure>
+      <figure class="gitem" data-cat="remont"><img src="images/work-pit.jpg" alt="" loading="lazy"><figcaption>Покраска защиты приямка</figcaption></figure>
+      <figure class="gitem" data-cat="clean"><img src="images/work-clean-1.jpg" alt="" loading="lazy"><figcaption>Уборка у входа в подъезд</figcaption></figure>
+      <figure class="gitem" data-cat="remont"><img src="images/work-door-1.jpg" alt="" loading="lazy"><figcaption>Ремонт входной двери</figcaption></figure>
+      <figure class="gitem" data-cat="blago"><img src="images/work-digging.jpg" alt="" loading="lazy"><figcaption>Обновление газонов и клумб</figcaption></figure>
+      <figure class="gitem" data-cat="remont"><img src="images/work-paint-1.jpg" alt="" loading="lazy"><figcaption>Покраска урн</figcaption></figure>
+      <figure class="gitem" data-cat="remont"><img src="images/work-drain.jpg" alt="" loading="lazy"><figcaption>Прочистка ливнёвки</figcaption></figure>
+      <figure class="gitem" data-cat="blago"><img src="images/work-lawn.jpg" alt="" loading="lazy"><figcaption>Работы на газоне</figcaption></figure>
+      <figure class="gitem" data-cat="remont"><img src="images/work-repair-1.jpg" alt="" loading="lazy"><figcaption>Ремонт цоколя дома</figcaption></figure>
+      <figure class="gitem" data-cat="remont"><img src="images/work-repair-2.jpg" alt="" loading="lazy"><figcaption>Ремонт мусорного контейнера</figcaption></figure>
+      <figure class="gitem" data-cat="remont"><img src="images/work-entrance-1.jpg" alt="" loading="lazy"><figcaption>Замена плинтусов в подъезде</figcaption></figure>
+      <figure class="gitem" data-cat="remont"><img src="images/work-entrance-3.jpg" alt="" loading="lazy"><figcaption>Покраска в подъезде</figcaption></figure>
+      <figure class="gitem" data-cat="remont"><img src="images/work-paint-2.jpg" alt="" loading="lazy"><figcaption>Покраска уличного оборудования</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark" id="rayon">
+  <div class="wrap">
+    <h2 class="section__title">Наш район</h2>
+    <p class="section__sub">Аллеи, дворы, детские и спортивные площадки, за которыми мы ухаживаем каждый день.</p>
+    <div class="strip-nav">
+      <button type="button" aria-label="Назад" onclick="document.getElementById('strip').scrollBy({left:-320,behavior:'smooth'})">‹</button>
+      <button type="button" aria-label="Вперёд" onclick="document.getElementById('strip').scrollBy({left:320,behavior:'smooth'})">›</button>
+    </div>
+    <div class="strip" id="strip">
+      <button type="button" data-cap="Аллея с фонарями"><img src="images/hero.jpg" alt="Аллея с фонарями" loading="lazy"></button>
+      <button type="button" data-cap="Вечерний район"><img src="images/night.jpg" alt="Вечерний район с высоты" loading="lazy"></button>
+      <button type="button" data-cap="Скейт-площадка"><img src="images/rayon-02.jpg" alt="Скейт-площадка" loading="lazy"></button>
+      <button type="button" data-cap="Детская площадка"><img src="images/rayon-09.jpg" alt="Детская площадка" loading="lazy"></button>
+      <button type="button" data-cap="Пешеходная аллея"><img src="images/rayon-04.jpg" alt="Пешеходная аллея" loading="lazy"></button>
+      <button type="button" data-cap="Двор и спортивная площадка"><img src="images/rayon-05.jpg" alt="Двор и спортивная площадка" loading="lazy"></button>
+      <button type="button" data-cap="Озеленение у детской площадки"><img src="images/rayon-06.jpg" alt="Озеленение у детской площадки" loading="lazy"></button>
+      <button type="button" data-cap="Детский сад"><img src="images/rayon-08.jpg" alt="Детский сад" loading="lazy"></button>
+      <button type="button" data-cap="Улица района"><img src="images/rayon-03.jpg" alt="Улица района" loading="lazy"></button>
+      <button type="button" data-cap="Дома района"><img src="images/rayon-07.jpg" alt="Дома района" loading="lazy"></button>
+      <button type="button" data-cap="Двор с площадкой"><img src="images/rayon-10.jpg" alt="Двор с площадкой, вид сверху" loading="lazy"></button>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="meters">
+  <div class="wrap meters">
+    <div>
+      <h2 class="section__title">Показания счётчиков</h2>
+      <p>Отправьте СМС на номер <a class="strong-link" href="sms:+79054102162">8-905-410-21-62</a> в формате:</p>
+      <div class="sms-example"><code>Тух 28/5 кв 298 с130 в4 г210</code></div>
+      <ul class="legend">
+        <li><b>Тух 28/5</b> — улица и дом</li>
+        <li><b>кв 298</b> — номер квартиры</li>
+        <li><b>с130</b> — показания счётчика</li>
+        <li><b>в4</b>, <b>г210</b> — показания других счётчиков</li>
+      </ul>
+      <p class="muted">Вопросы по начислениям — в абонентский отдел: <a href="tel:+78652998080">8 (8652) 99-80-80</a>.</p>
+    </div>
+    <form class="sms-builder" onsubmit="return false">
+      <h3>Составить СМС</h3>
+      <label>Улица и дом<input id="f-house" placeholder="Тух 28/5"></label>
+      <label>Квартира<input id="f-flat" inputmode="numeric" placeholder="298"></label>
+      <div class="row3">
+        <label>с<input id="f-s" inputmode="numeric" placeholder="130"></label>
+        <label>в<input id="f-v" inputmode="numeric" placeholder="4"></label>
+        <label>г<input id="f-g" inputmode="numeric" placeholder="210"></label>
+      </div>
+      <output id="f-out" class="sms-out">Тух 28/5 кв 298 с130 в4 г210</output>
+      <a id="f-send" class="btn btn--primary btn--block" href="sms:+79054102162">Отправить СМС</a>
+    </form>
+  </div>
+</section>
+
+<section class="section section--alt" id="hours">
+  <div class="wrap">
+    <h2 class="section__title">Режим работы</h2>
+    <p class="section__sub">Офис, абонентский отдел и приём администрации.</p>
+    <div class="grid grid--2">
+      <div class="card">
+        <h3>Офис и абонентский отдел</h3>
+        <table class="hours">
+          <tr><td>Пн – Пт</td><td>8:30 – 17:30</td></tr>
+          <tr><td>Перерыв</td><td>13:00 – 14:00</td></tr>
+          <tr><td>Суббота</td><td>8:30 – 14:00, без перерыва</td></tr>
+          <tr class="off"><td>Воскресенье</td><td>выходной</td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <h3>Приём администрации</h3>
+        <p>Ежедневно по предварительной записи, <b>14:00 – 16:00</b>.</p>
+        <p>Записаться: <a href="tel:+78652998080">8 (8652) 99-80-80</a></p>
+        <h3 class="mt">Аварийная служба</h3>
+        <p><b>Круглосуточно, без выходных</b><br><a href="tel:+78652490382">49-03-82</a>, <a href="tel:+78652998082">8 (8652) 99-80-82</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="office">
+  <div class="wrap office">
+    <div class="office__photos">
+      <button type="button" data-cap="Вход в офис «Комфорт Сервис»"><img src="images/office-1.webp" alt="Вход в офис УК «Комфорт Сервис» с вывеской" loading="lazy"></button>
+      <button type="button" data-cap="Офис на Тухачевского, 20/6"><img src="images/office-2.webp" alt="Офис УК «Комфорт Сервис» на ул. Тухачевского, 20/6" loading="lazy"></button>
+    </div>
+    <div>
+      <h2 class="section__title">Наш офис</h2>
+      <p class="section__sub">г. Ставрополь, ул. Тухачевского, 20/6</p>
+      <ol class="steps">
+        <li>Подойдите к дому <b>Тухачевского, 20/6</b>.</li>
+        <li>Найдите отдельный вход в <b>цокольный этаж</b> со стеклянным тамбуром.</li>
+        <li>Над дверью висит коричневая вывеска <b>«Комфорт Сервис»</b> с телефоном 8-8652-99-80-80.</li>
+      </ol>
+      <a class="btn btn--primary" href="https://yandex.ru/maps/org/komfort_servis/1043932677/" target="_blank" rel="noopener">Маршрут в Яндекс.Картах</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="about">
+  <div class="wrap">
+    <h2 class="section__title">О компании</h2>
+    <p class="section__sub">Работаем в Промышленном районе Ставрополя с 2008 года.</p>
+    <div class="grid grid--2">
+      <div>
+        <p>ООО «Управляющая компания «Комфорт Сервис» отвечает за то, чтобы в домах было чисто, тепло и безопасно, а ресурсы подавались без перебоев.</p>
+        <p>Директор — <b>Медведев Сергей Михайлович</b>.</p>
+        <p>Деятельность по управлению многоквартирными домами осуществляется на основании <b>лицензии № 026-000009 от 17.03.2015</b>.</p>
+      </div>
+      <dl class="req">
+        <dt>Полное наименование</dt><dd>Общество с ограниченной ответственностью «Управляющая компания «Комфорт Сервис»</dd>
+        <dt>ИНН / КПП</dt><dd>2635110419 / 263501001</dd>
+        <dt>ОГРН</dt><dd>1082635001899 от 06.02.2008</dd>
+        <dt>Юридический и фактический адрес</dt><dd>355040, г. Ставрополь, ул. Тухачевского, 20/6</dd>
+        <dt>Лицензия</dt><dd>№ 026-000009 от 17.03.2015</dd>
+      </dl>
+    </div>
+    <div class="disclose">
+      <h3>Раскрытие информации</h3>
+      <p>Сведения о домах в управлении, тарифах и отчётах — в государственной системе ГИС ЖКХ.</p>
+      <a class="btn btn--ghost" href="https://dom.gosuslugi.ru/" target="_blank" rel="noopener">ГИС ЖКХ — dom.gosuslugi.ru</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contacts">
+  <div class="wrap">
+    <h2 class="section__title">Контакты</h2>
+    <p class="section__sub">Звоните, пишите или приходите в офис.</p>
+    <div class="contacts">
+      <div class="contacts__info">
+        <div class="ci"><span>Адрес</span>г. Ставрополь, ул. Тухачевского, 20/6, цокольный этаж</div>
+        <div class="ci"><span>Телефон</span><a href="tel:+78652998080">8 (8652) 99-80-80</a></div>
+        <div class="ci"><span>Аварийная служба 24/7</span><a href="tel:+78652490382">49-03-82</a> · <a href="tel:+78652998082">8 (8652) 99-80-82</a></div>
+        <div class="ci"><span>Электронная почта</span><a href="mailto:uk.komfort-servis.st@yandex.ru">uk.komfort-servis.st@yandex.ru</a></div>
+        <div class="ci"><span>Канал в MAX</span><a href="https://max.ru/id2635110419_biz" target="_blank" rel="noopener">Новости и объявления для жителей</a></div>
+        <div class="ci ci--second"><span>Офис «Комфорт Сервис 1»</span>мкр. № 35, ул. Родосская, 2, цокольный этаж · <a href="tel:+78652991884">8 (8652) 99-18-84</a></div>
+        <a class="btn btn--max" href="https://max.ru/id2635110419_biz" target="_blank" rel="noopener">Подписаться на канал в MAX</a>
+      </div>
+      <div class="map">
+        <iframe title="Карта: ул. Тухачевского, 20/6" src="https://yandex.ru/map-widget/v1/?ll=41.906500%2C45.008500&amp;z=14&amp;pt=41.908543%2C45.013383%2Cpm2rdl1~41.904458%2C45.001989%2Cpm2bll2" loading="lazy" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__in">
+    <a class="logo" href="#top"><svg><use href="#logo"/></svg><span class="logo__text"><small>Управляющая компания</small>Комфорт Сервис</span></a>
+    <div>© <span id="year">2026</span> ООО «УК «Комфорт Сервис»<br><span class="muted">ИНН 2635110419 · ОГРН 1082635001899</span></div>
+    <div><a href="tel:+78652998080">8 (8652) 99-80-80</a><br><a href="mailto:uk.komfort-servis.st@yandex.ru">uk.komfort-servis.st@yandex.ru</a></div>
+  </div>
+</footer>
+
+<a class="fab" href="tel:+78652490382" aria-label="Позвонить в аварийную службу">Авария 24/7</a>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Просмотр фото">
+  <button class="lb__btn lb__close" type="button" aria-label="Закрыть">✕</button>
+  <button class="lb__btn lb__prev" type="button" aria-label="Предыдущее фото">‹</button>
+  <img id="lb-img" alt="">
+  <div class="lb__cap" id="lb-cap"></div>
+  <button class="lb__btn lb__next" type="button" aria-label="Следующее фото">›</button>
+</div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* SMS builder */
+(function () {
+  var ids = ['f-house','f-flat','f-s','f-v','f-g'], el = {};
+  ids.forEach(function (i) { el[i] = document.getElementById(i); });
+  var out = document.getElementById('f-out'), send = document.getElementById('f-send');
+  function build() {
+    var p = [];
+    if (el['f-house'].value.trim()) p.push(el['f-house'].value.trim());
+    if (el['f-flat'].value.trim()) p.push('кв ' + el['f-flat'].value.trim());
+    [['f-s','с'],['f-v','в'],['f-g','г']].forEach(function (x) { var v = el[x[0]].value.trim(); if (v) p.push(x[1] + v); });
+    var text = p.length ? p.join(' ') : 'Тух 28/5 кв 298 с130 в4 г210';
+    out.textContent = text;
+    send.href = 'sms:+79054102162?body=' + encodeURIComponent(text);
+  }
+  ids.forEach(function (i) { el[i].addEventListener('input', build); });
+})();
+
+/* Gallery filter */
+(function () {
+  var items = [].slice.call(document.querySelectorAll('#gallery .gitem'));
+  var btns = [].slice.call(document.querySelectorAll('.filter'));
+  var names = { blago: 'Благоустройство', remont: 'Ремонт', clean: 'Чистота' };
+  items.forEach(function (it) {
+    it.setAttribute('tabindex', '0');
+    it.setAttribute('role', 'button');
+    var img = it.querySelector('img'), cap = it.querySelector('figcaption').textContent;
+    img.alt = cap;
+    var tag = document.createElement('span'); tag.className = 'gitem__tag'; tag.textContent = names[it.dataset.cat];
+    it.appendChild(tag);
+  });
+  btns.forEach(function (b) {
+    var f = b.dataset.filter;
+    b.querySelector('span').textContent = items.filter(function (i) { return f === 'all' || i.dataset.cat === f; }).length;
+    b.addEventListener('click', function () {
+      btns.forEach(function (x) { x.classList.toggle('is-active', x === b); });
+      items.forEach(function (i) { i.classList.toggle('is-hidden', !(f === 'all' || i.dataset.cat === f)); });
+    });
+  });
+})();
+
+/* Lightbox */
+(function () {
+  var lb = document.getElementById('lb'), img = document.getElementById('lb-img'), cap = document.getElementById('lb-cap');
+  var list = [], idx = 0;
+  function collect(trigger) {
+    if (trigger.classList.contains('gitem')) {
+      return [].slice.call(document.querySelectorAll('#gallery .gitem:not(.is-hidden)')).map(function (n) {
+        return { src: n.querySelector('img').src, cap: n.querySelector('figcaption').textContent, node: n };
+      });
+    }
+    var group = trigger.parentNode;
+    return [].slice.call(group.querySelectorAll('button[data-cap]')).map(function (n) {
+      return { src: n.querySelector('img').src, cap: n.dataset.cap, node: n };
+    });
+  }
+  function show() {
+    var it = list[idx];
+    img.src = it.src; img.alt = it.cap;
+    cap.innerHTML = '';
+    cap.appendChild(document.createTextNode(it.cap));
+    var s = document.createElement('small'); s.textContent = (idx + 1) + ' из ' + list.length; cap.appendChild(s);
+  }
+  function open(trigger) {
+    list = collect(trigger);
+    idx = Math.max(0, list.findIndex(function (x) { return x.node === trigger; }));
+    show(); lb.classList.add('is-open'); document.body.classList.add('lb-open');
+  }
+  function close() { lb.classList.remove('is-open'); document.body.classList.remove('lb-open'); img.removeAttribute('src'); }
+  function step(d) { idx = (idx + d + list.length) % list.length; show(); }
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('.gitem, .strip button[data-cap], .office__photos button[data-cap]');
+    if (t) open(t);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('is-open')) {
+      if ((e.key === 'Enter' || e.key === ' ') && e.target.classList && e.target.classList.contains('gitem')) { e.preventDefault(); open(e.target); }
+      return;
+    }
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowRight') step(1);
+    if (e.key === 'ArrowLeft') step(-1);
+  });
+  lb.querySelector('.lb__close').addEventListener('click', close);
+  lb.querySelector('.lb__prev').addEventListener('click', function () { step(-1); });
+  lb.querySelector('.lb__next').addEventListener('click', function () { step(1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+  var x0 = null;
+  lb.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function (e) {
+    if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1); x0 = null;
+  });
+})();
+</script>
+</body>
+</html>
